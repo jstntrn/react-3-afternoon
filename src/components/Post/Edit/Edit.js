@@ -20,7 +20,10 @@ export default class Edit extends Component {
   }
 
   updatePost() {
-
+    const { text } = this.state;  //destructure state objects
+    const { id, updatePostFn, hideEdit} = this.props; //destructure props object
+    updatePostFn(id, text); //invoke updatePostFn with id and text from destructure
+    hideEdit();
   }
 
   render() {
